@@ -17,3 +17,5 @@ Mật khẩu : 123123
 
 Tài khoản Admin : khanghm1
 Mật khẩu : 1
+
+Em để báo cáo word bản mới nhất ở đây để cô tiện theo dõi ạ em có bổ sung thêm một chút với format lại cho dễ nhìn hơn.
