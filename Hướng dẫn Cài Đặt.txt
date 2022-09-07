@@ -1,6 +1,9 @@
 Hướng dẫn cài đặt:
+
 Bước 1 : Dùng IDE VS Code hoặc những IDE tương đương có thể chạy được Node JS và React JS
+
 Bước 2 : Clone project web về và mở bằng VS Code cài đặt node_modules với lệnh : npm i
+
 Bước 3 : Vì API nó có vài file bị warning trên github nên em để link drive ạ
 https://drive.google.com/drive/folders/1dMYlz5WaxfxQdcNwWS9PDO4IF2l60Ip5 cô vào tải API ở đây.
 
