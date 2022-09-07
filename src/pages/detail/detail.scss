@@ -1,0 +1,323 @@
+@use "../../scss/" as *;
+
+.banner {
+  height: 50vh;
+
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    @include overlay();
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background-image: linear-gradient(to top, $body-bg, rgba($black, 0));
+  }
+}
+
+.movie-content {
+  @include flex(flex-start, flex-start);
+  max-width: 1260px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: -200px;
+  position: relative;
+  padding: 0 2rem;
+  // flex-direction: row;
+
+  &__poster {
+    flex: 1;
+
+    @include mobile {
+      display: none;
+    }
+
+    &__img {
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      border-radius: $border-radius;
+      padding-top: 165%;
+    }
+  }
+
+  &__info {
+    width: 70%;
+    padding-left: 2rem;
+    position: relative;
+
+    @include mobile {
+      width: 100%;
+      padding-left: 0;
+    }
+
+    & > * {
+      margin-bottom: 2rem;
+    }
+
+    .titles {
+      font-size: 4rem;
+      line-height: 1;
+    }
+
+    .genres {
+      & > * ~ * {
+        margin-left: 0.5rem;
+      }
+
+      &__item {
+        padding: 0.5rem 1.5rem;
+        border: 2px solid $white;
+        border-radius: $border-radius;
+        font-size: 0.8rem;
+        font-weight: 600;
+        background-color: $body-bg;
+      }
+    }
+  }
+}
+
+.casts {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+  gap: 10px;
+
+  &__item {
+    &__img {
+      margin-top: 20px;
+      padding-top: 160px;
+      background-size: cover;
+      margin-bottom: 0.5rem;
+    }
+
+    &__name {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+.video {
+  margin-bottom: 3rem;
+
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+}
+.checked {
+  color: orange;
+}
+// .big {
+//     font-size: 30px;
+// }
+
+.rating {
+  font-size: 30px;
+}
+
+.review-list ul li .left span {
+  width: 32px;
+  height: 32px;
+  display: inline-block;
+}
+.review-list ul li .left {
+  flex: none;
+  max-width: none;
+  margin: 0 10px 0 0;
+}
+.review-list ul li .left span img {
+  border-radius: 50%;
+}
+.review-list ul li .right h4 {
+  font-size: 16px;
+  margin: 0;
+  display: flex;
+}
+.review-list ul li .right h4 .gig-rating {
+  display: flex;
+  align-items: center;
+  margin-left: 10px;
+  color: #ffbf00;
+}
+.review-list ul li .right h4 .gig-rating svg {
+  margin: 0 4px 0 0px;
+}
+.country .country-flag {
+  width: 16px;
+  height: 16px;
+  vertical-align: text-bottom;
+  margin: 0 7px 0 0px;
+  border: 1px solid #fff;
+  border-radius: 50px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+.country .country-name {
+  color: #95979d;
+  font-size: 13px;
+  font-weight: 600;
+}
+.review-list ul li {
+  border-bottom: 1px solid #dadbdd;
+  padding: 0 0 30px;
+  margin: 0 0 30px;
+}
+.review-list ul li .right {
+  flex: auto;
+}
+.review-list ul li .review-description {
+  margin: 20px 0 0;
+}
+.review-list ul li .review-description p {
+  font-size: 14px;
+  margin: 0;
+}
+.review-list ul li .publish {
+  font-size: 13px;
+  color: #95979d;
+}
+
+.review-section h4 {
+  font-size: 20px;
+  color: #222325;
+  font-weight: 700;
+}
+.review-section .stars-counters tr .stars-filter.fit-button {
+  padding: 6px;
+  border: none;
+  color: #4a73e8;
+  text-align: left;
+}
+.review-section .fit-progressbar-bar .fit-progressbar-background {
+  position: relative;
+  height: 8px;
+  background: #efeff0;
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  flex-grow: 1;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  background-color: #ffffff;
+  border-radius: 999px;
+}
+.review-section .stars-counters tr .star-progress-bar .progress-fill {
+  background-color: #ffb33e;
+}
+.review-section .fit-progressbar-bar .progress-fill {
+  background: #2cdd9b;
+  background-color: rgb(29, 191, 115);
+  height: 100%;
+  position: absolute;
+  left: 0;
+  z-index: 1;
+  border-radius: 999px;
+}
+.review-section .fit-progressbar-bar {
+  display: flex;
+  align-items: center;
+}
+.review-section .stars-counters td {
+  white-space: nowrap;
+}
+.review-section .stars-counters tr .progress-bar-container {
+  width: 100%;
+  padding: 0 10px 0 6px;
+  margin: auto;
+}
+.ranking h6 {
+  font-weight: 600;
+  padding-bottom: 16px;
+}
+.ranking li {
+  display: flex;
+  justify-content: space-between;
+  color: #95979d;
+  padding-bottom: 8px;
+}
+.review-section .stars-counters td.star-num {
+  color: #4a73e8;
+}
+.ranking li > span {
+  color: #62646a;
+  white-space: nowrap;
+  margin-left: 12px;
+}
+.review-section {
+  border-bottom: 1px solid #dadbdd;
+  padding-bottom: 24px;
+  margin-bottom: 34px;
+  padding-top: 64px;
+}
+.review-section select,
+.review-section .select2-container {
+  width: 188px !important;
+  border-radius: 3px;
+}
+ul,
+ul li {
+  list-style: none;
+  margin: 0px;
+}
+.helpful-thumbs,
+.helpful-thumb {
+  display: flex;
+  align-items: center;
+  font-weight: 700;
+}
+.review-list {
+  margin-left: 50px;
+  margin-top: 50px;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+
+select,
+textarea {
+  width: 100%; /* Full width */
+  padding: 12px; /* Some padding */
+  border: 1px solid #ccc; /* Gray border */
+  border-radius: 4px; /* Rounded borders */
+  box-sizing: border-box; /* Make sure that padding and width stays in place */
+  margin-top: 20px; /* Add a top margin */
+  margin-bottom: 16px; /* Bottom margin */
+  resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+}
+
+/* Style the submit button with a specific background color etc */
+input[type="submit"] {
+  background-color: $main-color;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type="submit"]:hover {
+  background-color: hsl(358, 86%, 31%);
+}
+.test {
+  margin-left: 10px;
+}
+
+/* Add a background color and some padding around the form */
+input[type="radio"] {
+  display: none;
+}
+
+.starbook {
+  cursor: pointer;
+  transition: color 200ms;
+}

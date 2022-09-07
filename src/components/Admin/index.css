@@ -1,0 +1,65 @@
+.btn-right {
+  float: right;
+  margin: 10px;
+}
+
+.mb-10 {
+  margin-bottom: 30px;
+}
+.mt-10 {
+  margin-top: 30px;
+}
+
+input,
+textarea,
+h3 {
+  color: #333;
+}
+
+.ant-pagination-item a {
+  color: #333 !important;
+}
+
+.input {
+  width: 100% !important;
+}
+
+.yellow {
+  background-color: rgb(240, 236, 11);
+}
+
+.btn-add {
+  background: rgb(9, 240, 55);
+  margin-left: 450px;
+}
+
+.search {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.type {
+  color: #333 !important;
+}
+.title {
+  font-size: 30px;
+  text-align: center;
+  font-style: bold;
+  font-weight: 700;
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.mt-5 {
+  /* margin-top: 15px; */
+}
+.text-xl {
+  font-size: 24px;
+}
+.poiter {
+  cursor: pointer;
+}
