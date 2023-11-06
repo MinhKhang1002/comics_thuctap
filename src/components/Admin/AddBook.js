@@ -81,16 +81,16 @@ function AddBook({ products, setProducts }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <h3>Tên sản phẩm:</h3>
+        <h3>Name</h3>
         <input
           className="input"
-          placeholder="Tên truyện"
+          placeholder="Name"
           {...register("title", { required: true })}
         />
       </div>
 
       <div className="flex items-center mt-4">
-        <h3 className="text-[16px]">Hình ảnh:</h3>
+        <h3 className="text-[16px]">Image</h3>
         <input
           className="input"
           type="file"
@@ -100,25 +100,25 @@ function AddBook({ products, setProducts }) {
       </div>
 
       <div>
-        <h3>Tác giả: </h3>
+        <h3>Author</h3>
         <input
           className="input"
-          placeholder="Tên truyện"
+          placeholder="Author"
           {...register("author")}
         />
       </div>
 
       <div>
-        <h3>Mô tả truyện:</h3>
+        <h3>Description:</h3>
         <input
           className="input"
-          placeholder="Mô tả"
+          placeholder="Description"
           {...register("description")}
         />
       </div>
 
       <div>
-        <h3>Loại truyện:</h3>
+        <h3>Type:</h3>
 
         <select
           name="type"
@@ -136,7 +136,7 @@ function AddBook({ products, setProducts }) {
       
 
       <div>
-        <h3>Loại truyện:</h3>
+        <h3>Type:</h3>
 
         <select
           name="type"
@@ -155,7 +155,7 @@ function AddBook({ products, setProducts }) {
 
       <input
         type="submit"
-        value="Thêm sách"
+        value="Add Book"
         class="form-submit"
         onClick={handleSubmit}
       />

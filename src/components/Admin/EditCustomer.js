@@ -58,7 +58,7 @@ function EditCustomer({
         <h3>Username:</h3>
         <input
           className="input"
-          placeholder="Tên truyện"
+          placeholder="Username"
           {...register("username")}
           readOnly
         />
@@ -68,12 +68,12 @@ function EditCustomer({
         <h3>Email:</h3>
         <input
           className="input"
-          placeholder="Tên truyện"
+          placeholder="Email"
           {...register("email")}
         />
       </div>
 
-      <h3>Hình ảnh:</h3>
+      <h3>Images:</h3>
       <div className="flex ">
         <img src={product.avatar} width="100" alt=""></img>
 
@@ -87,7 +87,7 @@ function EditCustomer({
 
       <input
         type="submit"
-        value="Cập nhật thông tin"
+        value="Edit Customer"
         class="form-submit"
         onClick={handleSubmit}
       />

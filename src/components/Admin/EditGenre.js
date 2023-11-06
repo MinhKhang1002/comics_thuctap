@@ -63,36 +63,36 @@ function EditGenre({
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <h3>Mã sản phẩm:</h3>
+        <h3>Endpoint:</h3>
         <input
           className="input"
-          placeholder="Tên truyện"
+          placeholder="Name"
           {...register("endpoint")}
           readOnly
         />
       </div>
 
       <div>
-        <h3>Tên sản phẩm:</h3>
+        <h3>Name:</h3>
         <input
           className="input"
-          placeholder="Tên truyện"
+          placeholder="Name"
           {...register("title")}
         />
       </div>
 
       <div>
-        <h3>Mô tả truyện:</h3>
+        <h3>Description:</h3>
         <input
           className="input"
-          placeholder="Mô tả"
+          placeholder="Description"
           {...register("description")}
         />
       </div>
 
       <input
         type="submit"
-        value="Cập nhật thông tin"
+        value="Edit Genres"
         class="form-submit"
         onClick={handleSubmit}
       />

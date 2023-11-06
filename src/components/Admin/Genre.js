@@ -126,7 +126,7 @@ function Genre(props) {
       <h3 class="title">Genre</h3>
       <Table
         columns={columns}
-        dataSource={items.map((product) => {
+        dataSource={items?.map((product) => {
           return product;
         })}
       ></Table>

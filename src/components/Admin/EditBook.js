@@ -81,24 +81,24 @@ function EditProduct({
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <h3>Mã sản phẩm:</h3>
+        <h3>Endpoint:</h3>
         <input
           className="input"
-          placeholder="Tên truyện"
+          placeholder="Endpoint"
           {...register("endpoint")}
           readOnly
         />
       </div>
 
       <div>
-        <h3>Tên sản phẩm:</h3>
+        <h3>Name:</h3>
         <input
           className="input"
-          placeholder="Tên truyện"
+          placeholder="Name"
           {...register("title")}
         />
       </div>
-      <h3>Hình ảnh:</h3>
+      <h3>Images:</h3>
       <div className="flex ">
         <img src={product.thumb} alt="" width="400"></img>
 
@@ -111,7 +111,7 @@ function EditProduct({
       </div>
 
       <div>
-        <h3>Tác giả: </h3>
+        <h3>Author: </h3>
         <input
           className="input"
           placeholder="Tên truyện"
@@ -120,16 +120,16 @@ function EditProduct({
       </div>
 
       <div>
-        <h3>Mô tả truyện:</h3>
+        <h3>Description:</h3>
         <input
           className="input"
-          placeholder="Mô tả"
+          placeholder="Description"
           {...register("description")}
         />
       </div>
 
       <div>
-        <h3>Loại truyện:</h3>
+        <h3>Type:</h3>
 
         <select
           name="type"
@@ -145,7 +145,7 @@ function EditProduct({
 
       <input
         type="submit"
-        value="Cập nhật thông tin"
+        value="Edit Book"
         class="form-submit"
         onClick={handleSubmit}
       />

@@ -188,7 +188,7 @@ function Products(props) {
 
       <Table
         columns={columns}
-        dataSource={items.map((product) => {
+        dataSource={items?.map((product) => {
           return product;
         })}
       ></Table>

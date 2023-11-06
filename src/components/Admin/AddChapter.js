@@ -61,7 +61,6 @@ function AddGenre({ products, setProducts, endpoint, getChapter }) {
           className="input"
           placeholder="Book Endpoint"
           {...register("chapter_endpoint", { required: true })}
-          readOnly
         />
       </div>
 
@@ -70,7 +69,7 @@ function AddGenre({ products, setProducts, endpoint, getChapter }) {
         <input className="input" placeholder="Mô tả" {...register("title")} />
       </div>
       <div className="flex items-center mt-4">
-        <h3 className="text-[16px]">Hình ảnh:</h3>
+        <h3 className="text-[16px]">Images</h3>
         <input
           className="input"
           type="file"
@@ -81,7 +80,7 @@ function AddGenre({ products, setProducts, endpoint, getChapter }) {
 
       <input
         type="submit"
-        value="Thêm thể loại"
+        value="Add Chapters"
         class="form-submit"
         onClick={handleSubmit}
       />

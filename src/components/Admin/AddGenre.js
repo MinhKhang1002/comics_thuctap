@@ -48,26 +48,26 @@ function AddGenre({ products, setProducts, getAllGenre }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <h3>Tên thể loại:</h3>
+        <h3>Name:</h3>
         <input
           className="input"
-          placeholder="Tên thể loại"
+          placeholder="Name"
           {...register("title", { required: true })}
         />
       </div>
 
       <div>
-        <h3>Mô tả thể loại:</h3>
+        <h3>Description:</h3>
         <input
           className="input"
-          placeholder="Mô tả"
+          placeholder="Description"
           {...register("description")}
         />
       </div>
 
       <input
         type="submit"
-        value="Thêm thể loại"
+        value="Add Genres"
         class="form-submit"
         onClick={handleSubmit}
       />

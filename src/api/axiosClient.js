@@ -27,7 +27,7 @@ axiosClient.interceptors.response.use(
 );
 
 export const comicsAPI = axios.create({
-  baseURL: "http://localhost:3000/",
+  baseURL: "http://localhost:5000/",
   headers: {
     "Content-Type": "application/json",
   },

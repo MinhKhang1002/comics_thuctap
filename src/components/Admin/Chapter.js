@@ -134,7 +134,7 @@ function Genre(props) {
       {items && (
         <Table
           columns={columns}
-          dataSource={items.map((product) => {
+          dataSource={items?.map((product) => {
             return product;
           })}
         ></Table>

@@ -25,13 +25,13 @@ function AddCustomer({ getCustomers }) {
     const postImages = async () => {
       try {
         const responseUploadFile = await axios.post(
-          "http://localhost:8080/api/cloudDinary/fileUpload",
+          "http://localhost:5000/api/cloudDinary/fileUpload",
           formDataUploadFile
         );
         if (responseUploadFile.status === 200) {
           console.log(responseUploadFile.data.message);
           const responseInsertCustomers = await axios.post(
-            "http://localhost:8080/api/customers",
+            "http://localhost:5000/api/customers",
             {
               fullName: fullName,
               status: 1,
@@ -61,7 +61,7 @@ function AddCustomer({ getCustomers }) {
     <div>
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex items-center">
-          <h3 className="text-[16px]">Tên khách hàng:</h3>
+          <h3 className="text-[16px]">Name</h3>
           <input
             className="border-2 w-10/12 ml-4 px-4 py-1 rounded"
             placeholder="Tên nhân viên"
@@ -70,7 +70,7 @@ function AddCustomer({ getCustomers }) {
         </div>
 
         <div className="flex items-center mt-4">
-          <h3 className="text-[16px]">Địa chỉ:</h3>
+          <h3 className="text-[16px]">Address</h3>
           <input
             className="border-2 w-10/12 ml-20 px-4 py-1 rounded"
             placeholder="Địa chỉ"
@@ -79,7 +79,7 @@ function AddCustomer({ getCustomers }) {
         </div>
 
         <div className="flex items-center mt-4">
-          <h3 className="text-[16px]">SĐT :</h3>
+          <h3 className="text-[16px]">Phone</h3>
           <input
             className="border-2 w-10/12 ml-24 px-4 py-1 rounded"
             placeholder="Số điện thoại"
@@ -97,7 +97,7 @@ function AddCustomer({ getCustomers }) {
         </div>
 
         <div className="flex items-center mt-4">
-          <h3 className="text-[16px]">Hình ảnh:</h3>
+          <h3 className="text-[16px]">Avatar</h3>
           <input
             className="border-2 w-10/12 ml-[60px] px-4 py-1 rounded"
             type="file"
@@ -106,7 +106,7 @@ function AddCustomer({ getCustomers }) {
         </div>
 
         <button className="mt-4 bg-blue-500 px-4 py-2 rounded text-white mb-4">
-          Thêm Khách Hàng
+          Add Customer
         </button>
       </form>
     </div>
