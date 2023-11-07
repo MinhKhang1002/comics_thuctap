@@ -7,7 +7,7 @@ import EditBook from "./EditBook";
 import { comicsAPI } from "../../api/axiosClient";
 import { comics } from "../../api/tmdbApi";
 import Chapter from "./Chapter";
-import { tabState, key, endpointBook } from "../../store/login";
+import { tabState, key, endpointBook, type } from "../../store/login";
 
 import { access_token } from "../../store/login";
 
@@ -20,6 +20,7 @@ function Products(props) {
   const [page, setPage] = useState(1);
   const [tab, setTab] = useRecoilState(tabState);
   const [endpoint, setEndpoint] = useRecoilState(endpointBook);
+  const [typeBook, setType] = useRecoilState(type);
 
   const [accessToken, setAccessToken] = useRecoilState(access_token);
   const [keyword, setKeyword] = useState("");
@@ -94,6 +95,7 @@ function Products(props) {
 
   const handleAddChapter = (text, record) => {
     setEndpoint(record.endpoint);
+    setType(record.type)
     setTab(3);
   };
   const handleToggleAdd = () => {

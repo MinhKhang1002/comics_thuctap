@@ -88,3 +88,9 @@ export const endpointBook = atom({
   key: "endpointBook", // unique ID (with respect to other atoms/selectors)
   default: [], // default value (aka initial value)
 });
+
+
+export const type = atom({
+  key: "typpe", // unique ID (with respect to other atoms/selectors)
+  default: [], // default value (aka initial value)
+});

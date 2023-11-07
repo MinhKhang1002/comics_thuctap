@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 // import AddProduct from "./AddProduct";
 import { Table, Button, Popconfirm, message } from "antd";
 import { useRecoilState } from "recoil";
-import { endpointBook, productState } from "../../store/login";
+import { endpointBook, productState, type } from "../../store/login";
 // import EditProduct from "./EditProduct";
 import { comics } from "../../api/tmdbApi";
 import AddChapter from "./AddChapter";
@@ -16,6 +16,7 @@ function Genre(props) {
 
   const [accessToken, setAccessToken] = useRecoilState(access_token);
   const [endpoint, setEndpoint] = useRecoilState(endpointBook);
+  const [typeBook, setType] = useRecoilState(type)
   const [keyword, setKeyword] = useState(endpoint);
   console.log(keyword);
   const config = {
@@ -149,6 +150,7 @@ function Genre(props) {
           products={items}
           endpoint={keyword}
           setProducts={items}
+          type={typeBook}
         ></AddChapter>
       )}
     </div>

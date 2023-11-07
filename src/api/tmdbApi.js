@@ -177,6 +177,10 @@ export const comics = {
     const url = `chapter/comic/${endpoint}`;
     return comicsAPI.post(url, params, config);
   },
+  addNovel: (endpoint, params, config) => {
+    const url = `chapter/novel/${endpoint}`;
+    return comicsAPI.post(url, params, config);
+  },
   ratingBook: (endpoint, params, config) => {
     const url = `book/rate/${endpoint}`;
     return comicsAPI.patch(url, params, config);

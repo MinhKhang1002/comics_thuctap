@@ -7,12 +7,11 @@ import { useRecoilState } from "recoil";
 
 import { access_token, username } from "../../store/login";
 
-function AddGenre({ products, setProducts, endpoint, getChapter }) {
+function AddGenre({ products, setProducts, endpoint, getChapter, type }) {
   const [accessToken, setAccessToken] = useRecoilState(access_token);
   const config = {
     headers: { Authorization: `Bearer ${accessToken}` },
   };
-
   const success = () => {
     message.success("Thêm thành công");
   };
@@ -35,17 +34,26 @@ function AddGenre({ products, setProducts, endpoint, getChapter }) {
     for (var i = 0; i < images.length; i++) {
       formData.append("images", images[i]);
     }
-    // formData.append("images", images);
     const addGenre = async () => {
       try {
-        const response = await comics.addChapter(endpoint, formData, config);
-        console.log(response);
-        if (response.status === 200) {
-          setValue("title", "");
-          getChapter();
-          success();
+        if (type === "Comic") {
+          const response = await comics.addChapter(endpoint, formData, config);
+          if (response.status === 200) {
+            setValue("title", "");
+            getChapter();
+            success();
+          } else {
+            error();
+          }
         } else {
-          error();
+          const response = await comics.addNovel(endpoint, data, config);
+          if (response.status === 200) {
+            setValue("title", "");
+            getChapter();
+            success();
+          } else {
+            error();
+          }
         }
       } catch {
         console.log("errrrrrrrrrrrrrr");
@@ -68,15 +76,26 @@ function AddGenre({ products, setProducts, endpoint, getChapter }) {
         <h3>Title:</h3>
         <input className="input" placeholder="Mô tả" {...register("title")} />
       </div>
-      <div className="flex items-center mt-4">
-        <h3 className="text-[16px]">Images</h3>
-        <input
-          className="input"
-          type="file"
-          multiple="multiple"
-          {...register("images", { required: true })}
-        />
-      </div>
+      {type === "Comic" ? (
+        <div className="flex items-center mt-4">
+          <h3 className="text-[16px]">Images</h3>
+          <input
+            className="input"
+            type="file"
+            multiple="multiple"
+            {...register("images", { required: true })}
+          />
+        </div>
+      ) : (
+        <div className="flex items-center mt-4">
+          <h3 className="text-[16px]">Content</h3>
+          <textarea
+            className="input"
+            type="text"
+            {...register("images", { required: true })}
+          ></textarea>
+        </div>
+      )}
 
       <input
         type="submit"
