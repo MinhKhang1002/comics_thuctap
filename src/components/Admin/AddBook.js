@@ -38,7 +38,7 @@ function AddBook({ products, setProducts }) {
       setFilter(response.data.data);
     }
     getListGenre();
-  })
+  }, [])
 
   const onSubmit = (data) => {
     const { title, thumb, author, description, type, genres } = data;
@@ -81,16 +81,16 @@ function AddBook({ products, setProducts }) {
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
       <div>
-        <h3>Name</h3>
+        <h3>Tên sản phẩm:</h3>
         <input
           className="input"
-          placeholder="Name"
+          placeholder="Tên truyện"
           {...register("title", { required: true })}
         />
       </div>
 
       <div className="flex items-center mt-4">
-        <h3 className="text-[16px]">Image</h3>
+        <h3 className="text-[16px]">Hình ảnh:</h3>
         <input
           className="input"
           type="file"
@@ -100,25 +100,25 @@ function AddBook({ products, setProducts }) {
       </div>
 
       <div>
-        <h3>Author</h3>
+        <h3>Tác giả: </h3>
         <input
           className="input"
-          placeholder="Author"
+          placeholder="Tên truyện"
           {...register("author")}
         />
       </div>
 
       <div>
-        <h3>Description:</h3>
+        <h3>Mô tả truyện:</h3>
         <input
           className="input"
-          placeholder="Description"
+          placeholder="Mô tả"
           {...register("description")}
         />
       </div>
 
       <div>
-        <h3>Type:</h3>
+        <h3>Loại truyện:</h3>
 
         <select
           name="type"
@@ -136,7 +136,7 @@ function AddBook({ products, setProducts }) {
       
 
       <div>
-        <h3>Type:</h3>
+        <h3>Loại truyện:</h3>
 
         <select
           name="type"
@@ -155,7 +155,7 @@ function AddBook({ products, setProducts }) {
 
       <input
         type="submit"
-        value="Add Book"
+        value="Thêm sách"
         class="form-submit"
         onClick={handleSubmit}
       />
